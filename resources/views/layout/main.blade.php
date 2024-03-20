@@ -5,13 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
 
-    <link
-      rel="apple-touch-img"
-      sizes="76x76"
-      href="./assets/img/apple-img.png"
-    />
-    <link rel="img" type="image/png" href="./assets/img/favimg.png" />
-    <title>DENMEMS</title>
+   <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <title>DENNMEMS</title>
     <!--     Fonts and imgs     -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
