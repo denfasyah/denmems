@@ -36,7 +36,7 @@
     <ul class="flex flex-col pl-0 mb-0">
       <li class="mt-0.5 w-full">
         <a
-          class="py-2.7 bg-blue-500/13 text-black dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold transition-colors"
+          class="@if (request()->is('/'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold transition-colors"
           href="/"
         >
           <div
@@ -52,7 +52,7 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          class="@if (request()->is('latest'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
           href="{{ route('latest') }}"
         >
           <div
@@ -68,7 +68,7 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
           href="{{ route('trending') }}"
         >
           <div
@@ -84,7 +84,7 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          class="@if (request()->is('profile'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
           href="{{ route('profile') }}"
         >
           <div

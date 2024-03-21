@@ -28,7 +28,7 @@
   <body
     class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500"
   >
-  <div class="absolute w-full bg-blue-800 min-h-75"></div>
+  <div class="absolute w-full min-h-75"></div>
 
   @include('partials.sidenav')
   <main
