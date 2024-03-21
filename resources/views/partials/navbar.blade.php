@@ -15,7 +15,7 @@
               <li class="text-sm leading-normal">
                 <a class="text-white opacity-50">Pages</a>
               </li>
-              @if (request()->is('latest'))
+              @if (request()->is('/'))
               <a
                 class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
                 aria-current="page"
@@ -23,7 +23,7 @@
               >
                 New
               </a>
-              @if (request()->is('latest'))
+              @elseif(request()->is('latest'))
               <a
                 class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
                 aria-current="page"
@@ -36,7 +36,7 @@
 
 
 
-            <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6>
+            <!-- <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6> -->
           </nav>
 
           <div

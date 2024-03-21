@@ -37,7 +37,7 @@
       <li class="mt-0.5 w-full">
         <a
           class="py-2.7 bg-blue-500/13 text-black dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold transition-colors"
-          href="./pages/dashboard.html"
+          href="/"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"

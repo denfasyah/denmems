@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewController;
 use App\Http\Controllers\LatestController as Latest;
 
 /*
@@ -14,10 +15,9 @@ use App\Http\Controllers\LatestController as Latest;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
+
+Route::get('/', [NewController::class, 'index'])->name('new');
 Route::get('/latest', [Latest::class, 'index'])->name('latest');
 
 Route::get('/login', function () {
@@ -27,3 +27,4 @@ Route::get('/login', function () {
 Route::get('/profile', function () {
     return view('profile.index');
 });
+
