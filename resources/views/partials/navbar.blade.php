@@ -17,7 +17,7 @@
         <a
           class="text-sm pl-2 capitalize leading-normal text-black dark:text-white before:float-left before:pr-2 before:text-Aqua before:content-['/']"
           aria-current="page"
-          href="/fresh"
+          href="{{ route('fresh') }}"
         >
           Fresh
         </a>
@@ -113,8 +113,8 @@
       <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
         <li class="flex items-center">
           <a
-            href="./pages/sign-in.html"
-            class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand"
+            href="/"
+            class="block px-0 py-2 text-sm font-semibold text-black dark:text-white transition-all ease-nav-brand"
           >
             <i class="fa fa-user sm:mr-1"></i>
             <span class="hidden sm:inline">Sign In</span>
@@ -128,13 +128,13 @@
           >
             <div class="w-4.5 overflow-hidden">
               <i
-                class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"
+                class="ease mb-0.75 relative block h-0.5 rounded-sm   bg-white transition-all"
               ></i>
               <i
-                class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"
+                class="ease mb-0.75 relative block h-0.5 rounded-sm   bg-white transition-all"
               ></i>
               <i
-                class="ease relative block h-0.5 rounded-sm bg-white transition-all"
+                class="ease relative block h-0.5 rounded-sm   bg-white transition-all"
               ></i>
             </div>
           </a>
