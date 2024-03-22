@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewController;
-use App\Http\Controllers\LatestController as Latest;
 use App\Http\Controllers\TrendingController as Trending;
 use App\Http\Controllers\ProfileController as Profile;
 
@@ -19,12 +17,10 @@ use App\Http\Controllers\ProfileController as Profile;
 
 
 
-Route::get('/', [NewController::class, 'index'])->name('new');
-Route::get('/latest', [Latest::class, 'index'])->name('latest');
 Route::get('/trending', [Trending::class, 'index'])->name('trending');
 Route::get('/profile', [Profile::class, 'index'])->name('profile');
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('auth.login');
 });
 

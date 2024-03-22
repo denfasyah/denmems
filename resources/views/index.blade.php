@@ -1,147 +1,70 @@
-@extends('layout.main') @section('content')
+<!DOCTYPE html>
+<html lang="en" data-theme="nord">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @vite('resources/css/app.css')
 
-<div class="container">
-<div class="flex justify-center flex-wrap mt-6 -mx-3 scroll-behavior">
-          <div
-            class="w-full pb-5 px-3 mt-5 lg:mt-0 mb-6 lg:mb-0 lg:flex-none"
-            id="youranswer"
-          >
+    <title>DENMEMS | Login</title>
+  </head>
+
+  <body class="overflow-hidden">
+    <div
+      class="hero min-h-screen bg-gradient-to-tl from-30% from-Blue to-white"
+    >
+      <div class="container">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div>
             <div
-              class="shadow-xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white dark:bg-slate-850 bg-clip-border p-4"
+              class="flex flex-col items-center justify-center h-screen dark"
             >
-              <div class="relative h-full overflow-hidden bg-cover rounded-xl">
-                <div
-                  class="bg-white dark:bg-slate-850 p-5 rounded-2xl relative"
-                >
-                  <h2
-                    class="text-md lg:text-xl text-black dark:text-white md:text-xl sm:text-md font-bold mb-4 flex items-center justify-center"
-                  >
-                    Create
-                  </h2>
-                  <hr class="h-0.5 bg-slate-400" />
-                  <form role="form text-left" id="editor"></form>
-                  <div class="flex justify-end gap-2 mt-5">
-                    <input
-                      type="text"
-                      class="w-full bg-white dark:bg-slate-850 border-2 border-blue-800"
-                    />
-                    <button
-                      class="bg-Blue text-white dark:text-white rounded-xl lg:px-10 md:px-7 sm:px-5 px-4 py-1"
+              <div class="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-200 mb-4">Login</h2>
+                <form class="flex flex-col">
+                  <input
+                    placeholder="Email address"
+                    class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                    type="email"
+                  />
+                  <input
+                    placeholder="Password"
+                    class="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                    type="password"
+                  />
+                  <div class="flex items-center justify-between flex-wrap">
+                    <label
+                      class="text-sm text-gray-200 cursor-pointer"
+                      for="remember-me"
                     >
-                      Create
-                    </button>
+                      <input class="mr-2" id="remember-me" type="checkbox" />
+                      Remember me
+                    </label>
+                    <a
+                      class="text-sm text-blue-500 hover:underline mb-0.5"
+                      href="#"
+                      >Forgot password?</a
+                    >
+                    <p class="text-white mt-4">
+                      Don't have an account?
+                      <a
+                        class="text-sm text-blue-500 -200 hover:underline mt-4"
+                        href="#"
+                        >Signup</a
+                      >
+                    </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- quest -->
-          <div class="w-full pb-5 px-3 mt-5 lg:mt-0 mb-6 lg:mb-0 lg:flex-none">
-            <div
-              class="flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto px-4 pb-4">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-                    <div class="flex flex-col h-full">
-                      <div class="avatar flex items-center">
-                        <div
-                          class="mask mask-circle w-10 lg:w-14 md:w-14 sm:w-8"
-                        >
-                          <img src="{{ asset('icons/anime.png') }}" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                          <h5
-                            class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
-                          >
-                            Adent
-                          </h5>
-                          <span class="text-xs ml-5 text-black dark:text-white"
-                            >10.00</span
-                          >
-                        </div>
-                      </div>
-                      <p class="mb-1 font-semibold text-black dark:text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Similique, laudantium?
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2 -->
-            <div
-              class="mt-5 flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto px-4 pb-4">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-                    <div class="flex flex-col h-full">
-                      <div class="avatar flex items-center">
-                        <div
-                          class="mask mask-circle w-10 lg:w-14 md:w-14 sm:w-8"
-                        >
-                          <img src="{{ asset('icons/anime.png') }}" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                          <h5
-                            class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
-                          >
-                            Adent
-                          </h5>
-                          <span class="text-xs ml-5 text-black dark:text-white"
-                            >10.00</span
-                          >
-                        </div>
-                      </div>
-                      <p class="mb-1 font-semibold text-black dark:text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Similique, laudantium?
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3 -->
-            <div
-              class="mt-5 flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
-            >
-              <div class="flex-auto px-4 pb-4">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-                    <div class="flex flex-col h-full">
-                      <div class="avatar flex items-center">
-                        <div
-                          class="mask mask-circle w-10 lg:w-14 md:w-14 sm:w-8"
-                        >
-                          <img src="{{ asset('icons/anime.png') }}" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                          <h5
-                            class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
-                          >
-                            Adent
-                          </h5>
-                          <span class="text-xs ml-5 text-black dark:text-white"
-                            >10.00</span
-                          >
-                        </div>
-                      </div>
-                      <p class="mb-1 font-semibold text-black dark:text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Similique, laudantium
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  <button
+                    class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                </form>
               </div>
             </div>
           </div>
         </div>
-</div>
-
-@endsection
+      </div>
+    </div>
+  </body>
+</html>
