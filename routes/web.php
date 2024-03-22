@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrendingController as Trending;
 use App\Http\Controllers\ProfileController as Profile;
+use App\Http\Controllers\FreshController as Fresh;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\ProfileController as Profile;
 
 
 
+Route::get('/fresh', [Fresh::class, 'index'])->name('fresh');
 Route::get('/trending', [Trending::class, 'index'])->name('trending');
 Route::get('/profile', [Profile::class, 'index'])->name('profile');
 

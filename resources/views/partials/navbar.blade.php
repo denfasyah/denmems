@@ -13,13 +13,13 @@
         <li class="text-sm leading-normal">
           <a class="text-white opacity-50">Pages</a>
         </li>
-        @if (request()->is('/'))
+        @if (request()->is('fresh'))
         <a
           class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
           aria-current="page"
-          href="/"
+          href="/fresh"
         >
-          New
+          Fresh
         </a>
         @elseif(request()->is('latest'))
         <a
