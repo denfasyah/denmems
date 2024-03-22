@@ -1,6 +1,6 @@
 <!-- sidenav  -->
 <aside
-  class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
+  class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0"
   aria-expanded="false"
 >
   <div class="h-19">
@@ -30,13 +30,11 @@
     class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent"
   />
 
-  <div
-    class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full"
-  >
+  <div class="items-center block w-auto max-h-screen h-sidenav grow basis-full">
     <ul class="flex flex-col pl-0 mb-0">
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('fresh'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold transition-colors"
+          class="@if (request()->is('fresh'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4  transition-colors"
           href="{{ route('fresh') }}"
         >
           <div
@@ -52,7 +50,7 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
           href="{{ route('trending') }}"
         >
           <div
@@ -80,8 +78,8 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('trending') }}"
+          class="@if (request()->is('gaming'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('gaming') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -96,8 +94,8 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('trending') }}"
+          class="@if (request()->is('anime'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('anime') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -112,8 +110,8 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('trending') }}"
+          class="@if (request()->is('technology'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('technology') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -128,8 +126,8 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('trending') }}"
+          class="@if (request()->is('dark'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('dark') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -144,8 +142,8 @@
 
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('trending') }}"
+          class="@if (request()->is('random'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('random') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
@@ -160,9 +158,9 @@
     </ul>
   </div>
   <hr
-    class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent"
+    class="mt-40 h-px bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent"
   />
-  <footer class="pt-4">
+  <footer class="">
     <div class="w-full px-2 mx-auto">
       <div class="flex flex-wrap items-center -mx-3 lg:justify-between">
         <div class="w-full max-w-full px-10 mt-0 mb-6 shrink-0">
