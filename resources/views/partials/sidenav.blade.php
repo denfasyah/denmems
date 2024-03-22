@@ -14,7 +14,7 @@
       target="_blank"
     >
       <img
-        src="{{ asset('img/logo.png') }}"
+        src="{{ asset('icons/logo.png') }}"
         class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-12"
         alt="main_logo"
       />
@@ -42,26 +42,10 @@
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
           >
-            <img src="{{ asset('img/newicon.svg') }}" alt="" class="w-5" />
+            <img src="{{ asset('icons/newicon.svg') }}" alt="" class="w-5" />
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
-            >New</span
-          >
-        </a>
-      </li>
-
-      <li class="mt-0.5 w-full">
-        <a
-          class="@if (request()->is('latest'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('latest') }}"
-        >
-          <div
-            class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
-          >
-            <img src="{{ asset('img/latesticon.svg') }}" alt="" class="w-5" />
-          </div>
-          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
-            >Latest</span
+            >Fresh</span
           >
         </a>
       </li>
@@ -74,7 +58,11 @@
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
           >
-            <img src="{{ asset('img/trendsidenav.png') }}" alt="" class="w-5" />
+            <img
+              src="{{ asset('icons/trendsidenav.png') }}"
+              alt=""
+              class="w-5"
+            />
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
             >Trending</span
@@ -82,18 +70,90 @@
         </a>
       </li>
 
+      <li class="w-full mt-4">
+        <h6
+          class="pl-6 ml-2 text-xs font-bold leading-tight uppercase text-black dark:text-white opacity-60"
+        >
+          Category
+        </h6>
+      </li>
+
       <li class="mt-0.5 w-full">
         <a
-          class="@if (request()->is('profile'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-          href="{{ route('profile') }}"
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('trending') }}"
         >
           <div
             class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
           >
-            <img src="{{ asset('img/usericon.svg') }}" alt="" class="w-5" />
+            <img src="{{ asset('icons/gamingicon.png') }}" alt="" class="w-6" />
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
-            >Profile</span
+            >Gaming</span
+          >
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
+        <a
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('trending') }}"
+        >
+          <div
+            class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
+          >
+            <img src="{{ asset('icons/animeicon.png') }}" alt="" class="w-8" />
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
+            >Anime</span
+          >
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
+        <a
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('trending') }}"
+        >
+          <div
+            class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
+          >
+            <img src="{{ asset('icons/codeicon.svg') }}" alt="" class="w-5" />
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
+            >Technology</span
+          >
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
+        <a
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('trending') }}"
+        >
+          <div
+            class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
+          >
+            <img src="{{ asset('icons/darkicon.png') }}" alt="" class="w-5" />
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
+            >Dark</span
+          >
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
+        <a
+          class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+          href="{{ route('trending') }}"
+        >
+          <div
+            class="mr-2 flex h-8 w-10 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5"
+          >
+            <img src="{{ asset('icons/randomicon.png') }}" alt="" class="w-5" />
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease"
+            >Random</span
           >
         </a>
       </li>
