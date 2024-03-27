@@ -112,39 +112,37 @@
       </div>
       <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
         <li class="flex items-center">
-          <a
-            href="/"
-            class="block px-0 py-2 text-sm font-semibold text-black dark:text-white transition-all ease-nav-brand"
-          >
-            <i class="fa fa-user sm:mr-1"></i>
-            <span class="hidden sm:inline">Sign In</span>
-          </a>
-        </li>
-        <li class="flex items-center pl-4 xl:hidden">
-          <a
-            href="javascript:;"
-            class="block p-0 text-sm text-white transition-all ease-nav-brand"
-            sidenav-trigger
-          >
-            <div class="w-4.5 overflow-hidden">
-              <i
-                class="ease mb-0.75 relative block h-0.5 rounded-sm   bg-white transition-all"
-              ></i>
-              <i
-                class="ease mb-0.75 relative block h-0.5 rounded-sm   bg-white transition-all"
-              ></i>
-              <i
-                class="ease relative block h-0.5 rounded-sm   bg-white transition-all"
-              ></i>
+          <div class="dropdown dropdown-bottom dropdown-end">
+            <div tabindex="0" role="button" class="">
+              <div class="avatar flex items-center">
+                <div class="mask mask-circle w-7 lg:w-12 md:w-14 sm:w-8">
+                  <img src="{{ asset('icons/anime.png') }}" />
+                </div>
+              </div>
             </div>
-          </a>
+            <ul
+              tabindex="0"
+              class="dropdown-content z-[1] mt-2 menu shadow bg-base-100 rounded-box w-36"
+            >
+              <li class="">
+                <a href="{{ route('profile') }}">Profile</a>
+              </li>
+              <li class="">
+                <form method="POST">
+                  <button type="submit">Logout</button>
+                </form>
+              </li>
+            </ul>
+          </div>
         </li>
+
+        <!-- bookmark -->
         <li class="flex items-center px-4">
           <a
             href="javascript:;"
             class="p-0 text-sm text-white transition-all ease-nav-brand"
           >
-            <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
+            <img src="{{ asset('icons/bookmarknav.svg') }}" alt="" />
             <!-- fixed-plugin-button-nav  -->
           </a>
         </li>
@@ -159,7 +157,7 @@
             dropdown-trigger
             aria-expanded="false"
           >
-            <i class="cursor-pointer fa fa-bell"></i>
+            <i class="cursor-pointer fa fa-bell" style="color: #004aad"></i>
           </a>
 
           <ul
@@ -289,6 +287,20 @@
               </a>
             </li>
           </ul>
+        </li>
+
+        <li class="items-center px-4 lg:mt-2.5 md:mt-2.5">
+          <a
+            href="javascript:;"
+            class="p-0 text-sm text-white transition-all ease-nav-brand"
+          >
+            <i
+              fixed-plugin-button-nav
+              class="cursor-pointer fa fa-cog"
+              style="color: #004aad"
+            ></i>
+            <!-- fixed-plugin-button-nav  -->
+          </a>
         </li>
       </ul>
     </div>
