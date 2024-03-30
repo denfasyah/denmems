@@ -144,7 +144,7 @@
                   {{ $post->caption }}
                 </p>
 
-                <img src="{{ asset('icons/example.png') }}" alt="" class="w-full">
+                <!-- <img src="{{ asset('icons/example.png') }}" alt="" class="w-full"> -->
 
                 <div class="flex w-full gap-3 mt-5">
                   <!-- icon like -->
@@ -178,71 +178,7 @@
       </div>
       @endforeach
 
-      <!-- 2 -->
-      <div
-        class="mt-5 flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
-      >
-        <div class="flex-auto px-4 pb-4">
-          <div class="flex flex-wrap -mx-3">
-            <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-              <div class="flex flex-col h-full">
-                <div class="avatar flex items-center">
-                  <div class="mask mask-circle w-10 lg:w-14 md:w-14 sm:w-8">
-                    <img src="{{ asset('icons/anime.png') }}" />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <h5
-                      class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
-                    >
-                      Adent
-                    </h5>
-                    <span class="text-xs ml-5 text-black dark:text-white"
-                      >10.00</span
-                    >
-                  </div>
-                </div>
-                <p class="mb-1 font-semibold text-black dark:text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Similique, laudantium?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- 3 -->
-      <div
-        class="mt-5 flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
-      >
-        <div class="flex-auto px-4 pb-4">
-          <div class="flex flex-wrap -mx-3">
-            <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
-              <div class="flex flex-col h-full">
-                <div class="avatar flex items-center">
-                  <div class="mask mask-circle w-10 lg:w-14 md:w-14 sm:w-8">
-                    <img src="{{ asset('icons/anime.png') }}" />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <h5
-                      class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
-                    >
-                      Adent
-                    </h5>
-                    <span class="text-xs ml-5 text-black dark:text-white"
-                      >10.00</span
-                    >
-                  </div>
-                </div>
-                <p class="mb-1 font-semibold text-black dark:text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Similique, laudantium
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
 
