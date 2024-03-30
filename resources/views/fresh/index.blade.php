@@ -110,6 +110,7 @@
 
     <!-- Postingan -->
     <div class="relative pb-5 px-3 mt-5 lg:mt-0 mb-6 lg:w-7/12 lg:mb-0 lg:flex-none">
+      @foreach($posts as $post)
       <div
         class="flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
       >
@@ -140,7 +141,7 @@
                   </div>
                 </div>
                 <p class="mb-1 font-semibold text-black dark:text-white">
-                  mana bener lagi 🗿
+                  {{ $post->caption }}
                 </p>
 
                 <img src="{{ asset('icons/example.png') }}" alt="" class="w-full">
@@ -175,6 +176,7 @@
           </div>
         </div>
       </div>
+      @endforeach
 
       <!-- 2 -->
       <div
