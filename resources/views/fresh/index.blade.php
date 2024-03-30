@@ -166,7 +166,7 @@
                   </div>
 
                   <div class="bg-Blue text-white text-xs px-2 mt-2.5 h-5 rounded-xl absolute right-10">
-                    <p>Anime</p>
+                    <a href="{{ $post->category->slug }}">{{ $post->category->name }}</a>
                   </div>
                   
                 </div>
