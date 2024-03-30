@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +21,55 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        User::create([
+            'name' => 'Adent',
+            'email' => 'adent@example.com',
+            'password' => bcrypt('adent123')
+        ]);
+
+        User::create([
+            'name' => 'Reena',
+            'email' => 'reena@example.com',
+            'password' => bcrypt('reena123')
+        ]);
+
+        Post::create([
+            'caption' => 'wkwkw gaming',
+            'category_id' => 1,
+            'user_id' =>1
+        ]);
+
+        Post::create([
+            'caption' => 'wkwkw anime',
+            'category_id' => 2,
+            'user_id' =>2
+        ]);
+
+        Category::create([
+            'name' => 'Gaming',
+            'slug' => 'gaming',
+        ]);
+
+        Category::create([
+            'name' => 'Anime',
+            'slug' => 'anime',
+        ]);
+        Category::create([
+            'name' => 'Technology',
+            'slug' => 'technology',
+        ]);
+        Category::create([
+            'name' => 'Dark',
+            'slug' => 'dark',
+        ]);
+        Category::create([
+            'name' => 'Random',
+            'slug' => 'random',
+        ]);
+
+
+
+
     }
 }

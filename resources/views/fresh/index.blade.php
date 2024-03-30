@@ -1,7 +1,7 @@
 @extends('layout.main') @section('content')
 
 <div class="container">
-  <div class="flex flex-wrap mt-6 -mx-3 scroll-behavior">
+  <div class="flex flex-wrap mt-5 -mx-3 scroll-behavior">
 
     <div
       class="flex justify-between items-center w-full pb-5 px-3 mt-5 lg:mt-0 mb-6 lg:mb-0 lg:flex-none"
@@ -109,10 +109,10 @@
 
 
     <!-- Postingan -->
-    <div class="relative pb-5 px-3 mt-5 lg:mt-0 mb-6 lg:w-7/12 lg:mb-0 lg:flex-none">
+    <div class="relative pb-5 px-3 lg:mt-0 mb-6 w-full lg:w-7/12 lg:mb-0 lg:flex-none">
       @foreach($posts as $post)
       <div
-        class="flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
+        class="flex mt-4 flex-col min-w-0 break-words bg-white dark:bg-slate-850 shadow-soft-xl rounded-2xl bg-clip-border"
       >
         <div class="flex-auto px-4 pb-4">
           <div class="flex flex-wrap -mx-3">
@@ -131,7 +131,7 @@
                     <h5
                       class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
                     >
-                      Adent
+                    <a href="/profile">{{ $post->user->name }}</a>  
                     </h5>
                     
                     <span class="text-xs ml-5 text-black dark:text-white"
@@ -184,7 +184,7 @@
 
     <div class="pb-5 px-3 mt-5 hidden lg:mt-0 mb-6 lg:w-5/12 lg:mb-0 lg:flex">
       <div
-        class="flex flex-col min-w-0 break-words bg-white dark:bg-slate-850 h-72 shadow-soft-xl rounded-tl-2xl roundeb-bl-2xl bg-clip-border"
+        class="flex flex-col mt-4 min-w-0 break-words bg-white dark:bg-slate-850 h-72 shadow-soft-xl rounded-tl-2xl roundeb-bl-2xl bg-clip-border"
       >
         <div class="flex-auto  px-4 pb-4">
           <div class="flex  flex-wrap justify-center mt-5 -mx-3">
