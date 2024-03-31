@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController as Profile;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\PostController as Post;
 
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::get('/fresh', [Post::class, 'index'])->name('fresh');
 // Route::get('/fresh', [Fresh::class, 'index'])->name('fresh');
 Route::get('/trending', [Trending::class, 'index'])->name('trending');
 Route::get('/profile', [Profile::class, 'index'])->name('profile');
+// Route::get('/profile/{user}', [Profile::class, 'index'])->name('profile');
+
 
 // category
 Route::get('/gaming', [Category::class, 'gaming'])->name('gaming');

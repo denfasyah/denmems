@@ -13,7 +13,7 @@ class CategoryController extends Controller
         $gamingCategory = Category::findOrFail(1);
 
         // Mengambil semua postingan yang terkait dengan kategori gaming
-        $posts = $gamingCategory->posts;
+        $posts = $gamingCategory->posts->load('category', 'user');
 
         return view('category.gaming', [
             "posts" => $posts

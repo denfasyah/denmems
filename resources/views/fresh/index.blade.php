@@ -131,7 +131,7 @@
                     <h5
                       class="font-bold mt-4 ml-5 h-4 text-black dark:text-white"
                     >
-                    <a href="/profile">{{ $post->user->name }}</a>  
+                    <a href="/profile/{{ $post->user->name }}">{{ $post->user->name }}</a>  
                     </h5>
                     
                     <span class="text-xs ml-5 text-black dark:text-white"
