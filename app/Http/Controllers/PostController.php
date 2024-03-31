@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         return view('fresh.index',[
             // "posts" => Post::all()
-            "posts" => Post::with(['user','category'])->latest()->get()
+            "posts" => Post::latest()->get()
         ]);
     }
 

@@ -31,7 +31,7 @@
                     </h5>
                     
                     <span class="text-xs ml-5 text-black dark:text-white"
-                      >10.00</span
+                      >{{ $post->created_at->diffForHumans() }}</span
                     >
 
                   </div>
