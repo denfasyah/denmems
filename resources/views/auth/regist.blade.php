@@ -6,7 +6,7 @@
     @vite('resources/css/app.css')
     <link rel="shortcut icon" href="{{ asset('icons/logo.png') }}" type="image/x-icon">
 
-    <title>DENMEMS | Login</title>
+    <title>DENNMEMS | Regist</title>
   </head>
 
   <body class="overflow-hidden">
@@ -64,7 +64,8 @@
                     <div class="flex-1 h-px bg-white"></div>
                   </div>
                 </div> -->
-                <form class="flex flex-col mt-5 w-80">
+                <form class="flex flex-col mt-5 w-80" action="/register" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <div class="relative">
                       <span
@@ -78,7 +79,12 @@
                         type="name"
                         name="name"
                         id="name"
+                        required
+                        value="{{ old('name') }}"
                       />
+                      @error('name')
+                      <p class="text-red-500"> {{ $message }} </p>
+                      @enderror
                     </div>
                   </div>
                   <div class="mb-3">
@@ -94,7 +100,12 @@
                         type="email"
                         name="email"
                         id="email"
+                        required
+                        value="{{ old('email') }}"
                       />
+                      @error('email')
+                      <p class="text-red-500"> {{ $message }} </p>
+                      @enderror
                     </div>
                   </div>
                   <div class="mb-3">
@@ -117,6 +128,7 @@
                             id="hide"
                             data-name="password"
                           />
+                          
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -159,7 +171,11 @@
                         type="password"
                         name="password"
                         id="password"
+                        required
                       />
+                      @error('password')
+                      <p class="text-red-500"> {{ $message }} </p>
+                      @enderror
                     </div>
                   </div>
 

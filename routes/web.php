@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController as Profile;
 // use App\Http\Controllers\FreshController as Fresh;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\PostController as Post;
+use App\Http\Controllers\RegisterController as Register;
 
 use App\Models\User;
 /*
@@ -35,13 +36,15 @@ Route::get('/technology', [Category::class, 'technology'])->name('technology');
 Route::get('/dark', [Category::class, 'dark'])->name('dark');
 Route::get('/random', [Category::class, 'random'])->name('random');
 
+// auth
+Route::get('/register', [Register::class, 'index'])->name('register');
+Route::post('/register', [Register::class, 'store']);
+
 
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/register', function () {
-    return view('auth.regist');
-});
+
 

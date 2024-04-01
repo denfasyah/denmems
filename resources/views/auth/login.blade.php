@@ -10,10 +10,12 @@
       type="image/x-icon"
     />
 
-    <title>DENMEMS | Login</title>
+    <title>DENNMEMS | Login</title>
   </head>
 
   <body class="overflow-hidden">
+    @include('sweetalert::alert')
+
     <div
       class="hero min-h-screen bg-gradient-to-tl from-30% from-Blue to-white"
     >
@@ -179,13 +181,14 @@
       </div>
     </div>
     <script>
-      const _h = document.querySelectorAll('input[id="hide"]')
-      _h.forEach((x)=> {
+      const _h = document.querySelectorAll('input[id="hide"]');
+      _h.forEach((x) => {
         x.addEventListener("click", () => {
-          let _p = document.getElementById(x.getAttribute('data-name'))
-          _p.type = (_p.type == "password") ? _p.type = "text" : _p.type = "password"
-        })
-      })
-      </script>
+          let _p = document.getElementById(x.getAttribute("data-name"));
+          _p.type =
+            _p.type == "password" ? (_p.type = "text") : (_p.type = "password");
+        });
+      });
+    </script>
   </body>
 </html>
