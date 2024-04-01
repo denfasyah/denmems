@@ -94,11 +94,7 @@
     <div
       class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto"
     >
-    
-      <div class="flex items-center md:ml-auto md:pr-4" >
-        @yield('search')
-       
-      </div>
+      <div class="flex items-center md:ml-auto md:pr-4">@yield('search')</div>
       <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
         <li class="flex items-center">
           <div class="dropdown dropdown-bottom dropdown-end">
@@ -117,7 +113,8 @@
                 <a href="{{ route('profile') }}">Profile</a>
               </li>
               <li class="">
-                <form method="POST">
+                <form method="POST" action="/logout">
+                  @csrf
                   <button type="submit">Logout</button>
                 </form>
               </li>

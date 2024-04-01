@@ -23,26 +23,27 @@ use App\Models\User;
 
 
 
-Route::get('/fresh', [Post::class, 'index'])->name('fresh');
+Route::get('/fresh', [Post::class, 'index'])->name('fresh')->middleware('auth');
 // Route::get('/fresh', [Fresh::class, 'index'])->name('fresh');
-Route::get('/trending', [Trending::class, 'index'])->name('trending');
-Route::get('/profile', [Profile::class, 'index'])->name('profile');
+Route::get('/trending', [Trending::class, 'index'])->name('trending')->middleware('auth');
+Route::get('/profile', [Profile::class, 'index'])->name('profile')->middleware('auth');
 // Route::get('/profile/{user}', [Profile::class, 'index'])->name('profile');
 
 
 // category
-Route::get('/gaming', [Category::class, 'gaming'])->name('gaming');
-Route::get('/anime', [Category::class, 'anime'])->name('anime');
-Route::get('/technology', [Category::class, 'technology'])->name('technology');
-Route::get('/dark', [Category::class, 'dark'])->name('dark');
-Route::get('/random', [Category::class, 'random'])->name('random');
+Route::get('/gaming', [Category::class, 'gaming'])->name('gaming')->middleware('auth');
+Route::get('/anime', [Category::class, 'anime'])->name('anime')->middleware('auth');
+Route::get('/technology', [Category::class, 'technology'])->name('technology')->middleware('auth');
+Route::get('/dark', [Category::class, 'dark'])->name('dark')->middleware('auth');
+Route::get('/random', [Category::class, 'random'])->name('random')->middleware('auth');
 
 // auth
-Route::get('/register', [Register::class, 'index'])->name('register');
+Route::get('/register', [Register::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [Register::class, 'store']);
 
-Route::get('/', [Login::class, 'index'])->name('login');
+Route::get('/', [Login::class, 'index'])->name('login')->middleware('guest');
 Route::post('/', [Login::class, 'authenticate']);
+Route::post('/logout', [Login::class, 'logout']);
 
 
 

@@ -15,7 +15,7 @@
 
   <body class="overflow-hidden">
     @include('sweetalert::alert') @if(session()->has('loginError'))
-    <div class="flex justify-center items-center">
+    <div id="errorAlertLogin" class="flex justify-center items-center">
       <div role="alert" class="alert alert-error absolute top-2 w-80">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +33,38 @@
         <span class="text-white">{{ session("loginError") }}</span>
       </div>
     </div>
+    <script>
+      setTimeout(function () {
+        var element = document.getElementById("errorAlertLogin");
+        element.parentNode.removeChild(element);
+      }, 3000);
+    </script>
+    @endif @if(session()->has('successLogout'))
+    <div id="successAlertLogout" class="flex justify-center items-center">
+      <div role="alert" class="alert alert-success absolute top-2 w-80">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-current shrink-0 h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span class="text-white">{{ session("successLogout") }}</span>
+      </div>
+    </div>
+
+    <script>
+      setTimeout(function () {
+        var element = document.getElementById("successAlertLogout");
+        element.parentNode.removeChild(element);
+      }, 3000);
+    </script>
     @endif
 
     <div
