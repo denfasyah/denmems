@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController as Profile;
 use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\PostController as Post;
 use App\Http\Controllers\RegisterController as Register;
+use App\Http\Controllers\LoginController as Login;
 
 use App\Models\User;
 /*
@@ -40,11 +41,11 @@ Route::get('/random', [Category::class, 'random'])->name('random');
 Route::get('/register', [Register::class, 'index'])->name('register');
 Route::post('/register', [Register::class, 'store']);
 
+Route::get('/', [Login::class, 'index'])->name('login');
+Route::post('/', [Login::class, 'authenticate']);
 
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+
 
 
 

@@ -14,7 +14,26 @@
   </head>
 
   <body class="overflow-hidden">
-    @include('sweetalert::alert')
+    @include('sweetalert::alert') @if(session()->has('loginError'))
+    <div class="flex justify-center items-center">
+      <div role="alert" class="alert alert-error absolute top-2 w-80">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-current shrink-0 h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span class="text-white">{{ session("loginError") }}</span>
+      </div>
+    </div>
+    @endif
 
     <div
       class="hero min-h-screen bg-gradient-to-tl from-30% from-Blue to-white"
@@ -70,7 +89,8 @@
                     <div class="flex-1 h-px bg-white"></div>
                   </div>
                 </div> -->
-                <form class="flex flex-col mt-5 w-80">
+                <form class="flex flex-col mt-5 w-80" action="/" method="POST">
+                  @csrf
                   <div class="mb-3">
                     <div class="relative">
                       <span
@@ -84,7 +104,12 @@
                         type="email"
                         name="email"
                         id="email"
+                        required
+                        value="{{ old('email') }}"
                       />
+                      @error('email')
+                      <p class="text-red-500">{{ $message }}</p>
+                      @enderror
                     </div>
                   </div>
                   <div class="mb-3">
@@ -149,7 +174,11 @@
                         type="password"
                         name="password"
                         id="password"
+                        required
                       />
+                      @error('password')
+                      <p class="text-red-500">{{ $message }}</p>
+                      @enderror
                     </div>
                   </div>
 
@@ -180,6 +209,7 @@
         </div>
       </div>
     </div>
+
     <script>
       const _h = document.querySelectorAll('input[id="hide"]');
       _h.forEach((x) => {
