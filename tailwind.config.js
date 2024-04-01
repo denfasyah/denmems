@@ -17,6 +17,7 @@ export default {
       colors: {
         Blue: "#004aad",
         DarkBlue: "#1077D5",
+        Dark : "#051139",
         Aqua: "#24ebf5",
         Background: "#EBEBEB",
       },
