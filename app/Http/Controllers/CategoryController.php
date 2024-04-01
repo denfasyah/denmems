@@ -7,13 +7,23 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function gaming()
+    public function gaming(Request $request)
     {
-        // Mengambil kategori gaming dengan ID 1
         $gamingCategory = Category::findOrFail(1);
 
-        // Mengambil semua postingan yang terkait dengan kategori gaming
-        $posts = $gamingCategory->posts->load('category', 'user');
+        $posts = $gamingCategory->posts()->with('category', 'user');
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        $posts = $posts->get();
 
         return view('category.gaming', [
             "posts" => $posts

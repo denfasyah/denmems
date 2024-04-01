@@ -7,13 +7,25 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('fresh.index',[
-            // "posts" => Post::all()
-            "posts" => Post::latest()->get()
+        $posts = Post::latest();
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        return view('fresh.index', [
+            "posts" => $posts->get()
         ]);
     }
+
 
     // public function show($id)
     // {

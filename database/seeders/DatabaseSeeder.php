@@ -35,13 +35,25 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::create([
-            'caption' => 'wkwkw gaming',
+            'caption' => 'bjir',
             'category_id' => 1,
             'user_id' =>1
         ]);
 
         Post::create([
-            'caption' => 'wkwkw anime',
+            'caption' => 'wkwkkw',
+            'category_id' => 1,
+            'user_id' =>2
+        ]);
+
+        Post::create([
+            'caption' => 'aga laen',
+            'category_id' => 3,
+            'user_id' =>1
+        ]);
+
+        Post::create([
+            'caption' => 'ngakak brutal',
             'category_id' => 2,
             'user_id' =>2
         ]);
