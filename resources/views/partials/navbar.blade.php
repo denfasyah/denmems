@@ -17,7 +17,7 @@
         <a
           class="text-sm pl-2 capitalize leading-normal text-black dark:text-white before:float-left before:pr-2 before:text-Aqua before:content-['/']"
           aria-current="page"
-          href="{{ route('fresh') }}"
+          href="/fresh"
         >
           Fresh
         </a>
@@ -81,7 +81,7 @@
         <a
           class="text-sm pl-2 capitalize leading-normal text-black dark:text-white before:float-left before:pr-2 before:text-Aqua before:content-['/']"
           aria-current="page"
-          href="{{ route('profile') }}"
+          href="/profile"
         >
           Profile
         </a>
@@ -110,7 +110,7 @@
               class="dropdown-content z-[1] mt-2 menu shadow bg-base-100 rounded-box w-36"
             >
               <li class="">
-                <a href="{{ route('profile') }}">Profile</a>
+                <a href="/profile">Profile</a>
               </li>
               <li class="">
                 <form method="POST" action="/logout">

@@ -27,11 +27,5 @@ class PostController extends Controller
     }
 
 
-    // public function show($id)
-    // {
-    //     return view('fresh.index',[
-    //         "post" => Post::find($id)
-    //     ]);
 
-    // }
 }

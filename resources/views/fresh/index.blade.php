@@ -51,7 +51,9 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
               </button>
             </form>
             <h3 class="font-bold text-lg text-center ">Postingan</h3>
-
+<form  action="/fresh" method="post">
+  @csrf
+            <div>
             <div class="flex flex-col">
               <label
                 for="caption"
@@ -63,8 +65,12 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                 type="text"
                 placeholder="Ketik disini ..."
                 name="caption"
-                class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25"
+                class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25 @error('caption') ring-2 ring-error @enderror"
+                required
               />
+              @error('caption')
+              <p class="text-red-500"> {{ $message }} </p>
+              @enderror
             </div>
 
             <div class="flex flex-col">
@@ -77,7 +83,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                 id="picture"
                 type="file"
                 placeholder="Ketik disini ..."
-                name="caption"
+                name="picture"
                 class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25 file:bg-Blue file:text-white file:text-sm file:font-medium file:border-none file:rounded-lg cursor-pointer"
               />
             </div>
@@ -88,19 +94,20 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                 class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
                 >Category</label
               >
-            <select class="select select-bordered w-full border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25" name="category">
-              <option disabled selected>Choose Category</option>
-              <option>Gaming</option>
-              <option>Anime</option>
-              <option>Technology</option>
-              <option>Dark</option>
-              <option>Random</option>
+            <select class="select select-bordered w-full border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25" name="category_id" required>
+              <option value="1">Gaming</option>
+              <option value="2">Anime</option>
+              <option value="3">Technology</option>
+              <option value="4">Dark</option>
+              <option value="5">Random</option>
             </select>
+          </div>
           </div>
             
             <div class="flex justify-end">
-            <button class="bg-Blue text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue">Create</button>
+            <button type="submit" class="bg-Blue text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue">Create</button>
           </div>
+        </form>
           </div>
 
         </dialog>

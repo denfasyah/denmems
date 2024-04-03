@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController as Category;
 use App\Http\Controllers\PostController as Post;
 use App\Http\Controllers\RegisterController as Register;
 use App\Http\Controllers\LoginController as Login;
+use App\Http\Controllers\FreshController as Fresh;
 
 use App\Models\User;
 /*
@@ -45,6 +46,7 @@ Route::get('/', [Login::class, 'index'])->name('login')->middleware('guest');
 Route::post('/', [Login::class, 'authenticate']);
 Route::post('/logout', [Login::class, 'logout']);
 
+Route::resource('/fresh', Fresh::class)->middleware('auth');
 
 
 
