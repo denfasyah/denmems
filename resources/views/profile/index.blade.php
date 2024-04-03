@@ -38,7 +38,7 @@
                   </div>
                   <div class="flex flex-col gap-2">
                     <div class="absolute gap-2 flex right-0 mt-5">
-                      <img src="{{ asset('icons/bookmarkicon.svg') }}" alt="" />
+                      <!-- <img src="{{ asset('icons/bookmarkicon.svg') }}" alt="" /> -->
                       <div class="dropdown dropdown-bottom dropdown-end">
                         <div tabindex="0" role="button" class="">
                           <div class="avatar flex items-center">
@@ -48,14 +48,120 @@
                           </div>
                         </div>
                         <ul
-                          tabindex="0"
-                          class="dropdown-content z-[1] mt-2 menu shadow bg-base-100 rounded-box w-36"
+                          class="dropdown-content z-[1] mt-2 menu shadow bg-base-100 rounded-box w-32"
                         >
                           <li class="">
-                            <a href="/profile">Edit</a>
+                            <button class="" onclick="showEditModal()">
+                              <a href="{{ route('profile.edit', $post) }}">Edit</a>
+                            </button>
                           </li>
+                          <dialog id="editModal" class="modal">
+                            <div class="modal-box pb-10">
+                              <form method="dialog">
+                                <button
+                                  class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                                  onclick="hideEditModal()"
+                                >
+                                  ✕
+                                </button>
+                              </form>
+                              <h3 class="font-bold text-lg text-center">
+                                Postingan
+                              </h3>
+                              <form
+                                action="{{ route('profile.update', $post) }}"
+                                method="post"
+                              >
+                                @method('put') @csrf
+                                <div>
+                                  <div class="flex flex-col">
+                                    <label
+                                      for="caption"
+                                      class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
+                                      >Caption</label
+                                    >
+                                    <input
+                                      id="caption"
+                                      type="text"
+                                      placeholder="Ketik disini ..."
+                                      name="caption"
+                                      class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px] placeholder:text-black/25 @error('caption') ring-2 ring-error @enderror"
+                                      required
+                                      value="{{ $post->caption }}"
+                                    />
+                                    @error('caption')
+                                    <p class="text-red-500">{{ $message }}</p>
+                                    @enderror
+                                  </div>
+
+                                  <div class="flex flex-col">
+                                    <label
+                                      for="picture"
+                                      class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
+                                      >Picture</label
+                                    >
+                                    <input
+                                      id="picture"
+                                      type="file"
+                                      placeholder="Ketik disini ..."
+                                      name="picture"
+                                      class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px] placeholder:text-black/25 file:bg-Blue file:text-white file:text-sm file:font-medium file:border-none file:rounded-lg cursor-pointer"
+                                    />
+                                  </div>
+
+                                  <div class="flex flex-col">
+                                    <label
+                                      for="category"
+                                      class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
+                                      >Category</label
+                                    >
+                                    <select
+                                      class="select select-bordered w-full border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px] placeholder:text-black/25"
+                                      name="category_id"
+                                      required
+                                    >
+                                      <option disabled selected>
+                                        Choose one category
+                                      </option>
+                                      <option value="1">Gaming</option>
+                                      <option value="2">Anime</option>
+                                      <option value="3">Technology</option>
+                                      <option value="4">Dark</option>
+                                      <option value="5">Random</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+                                <div class="flex justify-end">
+                                  <button
+                                    type="submit"
+                                    class="font-bold border-2 border-Blue text-black dark:text-white hover:text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue"
+                                  >
+                                    Create
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </dialog>
+
+                          <!-- <li class="mx-5">
+                            <a href="{{ route('profile.edit', $post) }}"
+                              >Edit</a
+                            >
+                          </li> -->
+
                           <li class="">
-                            <a href="/profile">Delete</a>
+                            <form
+                              action="{{ route('profile.destroy', $post) }}"
+                              method="post"
+                            >
+                              @csrf @method('delete')
+                              <button
+                                onclick="return confirm('Yakin ingin menghapus?')"
+                              >
+                                Delete post
+                              </button>
+                            </form>
                           </li>
                         </ul>
                       </div>
@@ -155,6 +261,16 @@
       </div>
     </div>
   </div>
+  <script>
+    function showEditModal() {
+      var modal = document.getElementById("editModal");
+      modal.showModal();
+    }
 
-  @endsection
+    function hideEditModal() {
+      var modal = document.getElementById("editModal");
+      modal.close();
+    }
+  </script>
+  @include('sweetalert::alert') @endsection
 </div>

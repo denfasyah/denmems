@@ -27,8 +27,17 @@ use App\Models\User;
 Route::get('/fresh', [Post::class, 'index'])->name('fresh')->middleware('auth');
 // Route::get('/fresh', [Fresh::class, 'index'])->name('fresh');
 Route::get('/trending', [Trending::class, 'index'])->name('trending')->middleware('auth');
-Route::get('/profile', [Profile::class, 'index'])->name('profile')->middleware('auth');
 // Route::get('/profile/{user}', [Profile::class, 'index'])->name('profile');
+
+
+
+// profile
+Route::get('/profile', [Profile::class, 'index'])->name('profile')->middleware('auth');
+Route::delete('/profile/{post}', [Profile::class, 'destroy'])->name('profile.destroy');
+Route::get('/profile/{post}/edit', [Profile::class, 'edit'])->name('profile.edit');
+Route::put('/profile/{post}', [Profile::class, 'update'])->name('profile.update');
+
+
 
 
 // category
@@ -47,6 +56,8 @@ Route::post('/', [Login::class, 'authenticate']);
 Route::post('/logout', [Login::class, 'logout']);
 
 Route::resource('/fresh', Fresh::class)->middleware('auth');
+
+
 
 
 

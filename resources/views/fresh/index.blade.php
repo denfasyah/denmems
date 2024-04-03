@@ -95,6 +95,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                 >Category</label
               >
             <select class="select select-bordered w-full border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25" name="category_id" required>
+            <option disabled selected>Choose one category</option>
               <option value="1">Gaming</option>
               <option value="2">Anime</option>
               <option value="3">Technology</option>
@@ -105,7 +106,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
           </div>
             
             <div class="flex justify-end">
-            <button type="submit" class="bg-Blue text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue">Create</button>
+            <button type="submit" class="font-bold border-2 border-Blue text-black dark:text-white hover:text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue">Create</button>
           </div>
         </form>
           </div>
@@ -229,5 +230,6 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
 
   </div>
 </div>
+@include('sweetalert::alert')
 
 @endsection

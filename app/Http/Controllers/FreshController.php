@@ -25,6 +25,10 @@ class FreshController extends Controller
             });
         }
 
+        
+    
+  
+
         return view('fresh.index', [
             "posts" => $posts->get()
         ]);
@@ -63,6 +67,7 @@ class FreshController extends Controller
         // Handle jika kategori tidak ditemukan
             return redirect()->back()->withInput()->with('error', 'Kategori tidak valid.');
         }
+
     }
 
 
