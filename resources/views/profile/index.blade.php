@@ -1,11 +1,10 @@
-@extends('layout.main') @section('search')
+@extends('layout.main') 
+@section('search')
 <form
   class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease"
-  action="/gaming"
->
+  action="/gaming">
   <span
-    class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all"
-  >
+    class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
     <i class="fas fa-search"></i>
   </span>
   <input
@@ -19,6 +18,50 @@
 @endsection @section('content')
 
 <div class="container">
+  <div class="w-full px-6 mx-auto">
+    <div
+      class="relative flex items-center p-0 mt-6 overflow-hidden bg-center bg-cover min-h-75 rounded-2xl"
+    >
+      <img
+        src="{{ asset('icons/bgauth.png') }}"
+        alt="profile_image"
+        class="absolute inset-y-0 w-full h-full bg-center object-cover"
+      />
+    </div>
+
+    <div
+      class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 break-words border-0 shadow-blur rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200"
+    >
+      <div class="flex flex-wrap -mx-3">
+        <div class="flex-none w-auto max-w-full px-3">
+          <div
+            class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200"
+          >
+            <img
+              src="{{ asset('icons/anime.png') }}"
+              alt="profile_image"
+              class="w-20 shadow-soft-sm rounded-xl"
+            />
+          </div>
+        </div>
+        <div class="flex-none w-auto max-w-full px-3 my-auto">
+          <div class="h-full">
+            <h5 class="mb-1">{{ $posts[0]->user->name }}</h5>
+            <p class="mb-0 font-semibold leading-normal text-sm">
+              {{ $posts[0]->user->email }}
+            </p>
+          </div>
+        </div>
+
+        <div class="absolute right-5 top-10">
+          <button class="bg-Blue p-2 text-white rounded-b-xl rounded-tr-xl">
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="flex flex-wrap mt-5 -mx-3 scroll-behavior">
     <!-- Postingan -->
     <div
@@ -52,7 +95,7 @@
                         >
                           <li class="">
                             <button class="" onclick="showEditModal()">
-                              <a href="{{ route('profile.edit', $post) }}">Edit</a>
+                              Edit post
                             </button>
                           </li>
                           <dialog id="editModal" class="modal">
@@ -137,7 +180,7 @@
                                     type="submit"
                                     class="font-bold border-2 border-Blue text-black dark:text-white hover:text-white mt-5 p-2 text-sm rounded-b-2xl rounded-tr-2xl btn hover:bg-Blue"
                                   >
-                                    Create
+                                    Update
                                   </button>
                                 </div>
                               </form>
@@ -238,28 +281,7 @@
       </div>
       @endforeach
     </div>
-
-    <div class="pb-5 px-3 mt-5 hidden lg:mt-0 mb-6 lg:w-5/12 lg:mb-0 lg:flex">
-      <div
-        class="flex flex-col mt-4 min-w-0 break-words bg-white dark:bg-slate-850 h-72 shadow-soft-xl rounded-tl-2xl roundeb-bl-2xl bg-clip-border"
-      >
-        <div class="flex-auto px-4 pb-4">
-          <div class="flex flex-wrap justify-center mt-5 -mx-3">
-            <h1
-              class="text-2xl text-center text-black dark:text-white font-bold"
-            >
-              Halo, pengguna DennMems👋
-            </h1>
-          </div>
-          <p class="text-black dark:text-white">
-            Kami ingin memastikan pengalaman Anda di platform ini menyenangkan
-            bagi semua orang. Mohon untuk memposting dengan penuh pertimbangan
-            dan menjauhi konten yang tidak pantas. Terima kasih🙇Selamat
-            bersenang senang akwokwaokwok😭
-          </p>
-        </div>
-      </div>
-    </div>
+    @include('partials.greeting')
   </div>
   <script>
     function showEditModal() {

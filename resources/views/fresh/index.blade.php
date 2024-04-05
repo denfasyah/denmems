@@ -51,7 +51,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
               </button>
             </form>
             <h3 class="font-bold text-lg text-center ">Postingan</h3>
-<form  action="/fresh" method="post">
+<form  action="/fresh" method="post" enctype="multipart/form-data">
   @csrf
             <div>
             <div class="flex flex-col">
@@ -75,15 +75,15 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
 
             <div class="flex flex-col">
               <label
-                for="picture"
+                for="image"
                 class="text-blue-500 text-xs font-semibold relative top-2 ml-[7px] px-[3px] bg-[#e8e8e8] w-fit"
-                >Picture</label
+                >Image</label
               >
               <input
-                id="picture"
+                id="image"
                 type="file"
                 placeholder="Ketik disini ..."
-                name="picture"
+                name="image"
                 class="border-Blue focus:border-Blue focus:outline-none active:border-Blue input px-[10px] py-[11px] w-full text-xs bg-[#e8e8e8] border-2 rounded-[5px]  placeholder:text-black/25 file:bg-Blue file:text-white file:text-sm file:font-medium file:border-none file:rounded-lg cursor-pointer"
               />
             </div>
@@ -176,7 +176,9 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                   {{ $post->caption }}
                 </p>
 
-                <!-- <img src="{{ asset('icons/example.png') }}" alt="" class="w-full"> -->
+                @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" alt="" class="w-full">
+                @endif
 
                 <div class="flex w-full gap-3 mt-5">
                   <!-- icon like -->
@@ -214,18 +216,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
     </div>
 
 
-    <div class="pb-5 px-3 mt-5 hidden lg:mt-0 mb-6 lg:w-5/12 lg:mb-0 lg:flex">
-      <div
-        class="flex flex-col mt-4 min-w-0 break-words bg-white dark:bg-slate-850 h-72 shadow-soft-xl rounded-tl-2xl roundeb-bl-2xl bg-clip-border"
-      >
-        <div class="flex-auto  px-4 pb-4">
-          <div class="flex  flex-wrap justify-center mt-5 -mx-3">
-<h1 class="text-2xl text-center text-black dark:text-white font-bold">Halo, pengguna DennMems👋 </h1>
-</div>
-<p class="text-black  dark:text-white">Kami ingin memastikan pengalaman Anda di platform ini menyenangkan bagi semua orang. Mohon untuk memposting dengan penuh pertimbangan dan menjauhi konten yang tidak pantas. Terima kasih🙇Selamat bersenang senang akwokwaokwok😭</p>
-    </div>
-    </div>
-
+    @include('partials.greeting')
 
 
   </div>

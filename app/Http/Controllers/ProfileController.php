@@ -11,8 +11,20 @@ class ProfileController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $posts = Post::latest();
+        
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
         return view('profile.index', [
             'posts' => Post::where('user_id', auth()->user()->id)
                          ->latest() // Mengurutkan postingan dari yang terbaru
@@ -49,7 +61,8 @@ class ProfileController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('profile.edit', compact('post'));
+        
+        // return view('profile.edit', compact('post'));
     }
 
 

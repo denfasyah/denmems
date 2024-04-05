@@ -29,16 +29,11 @@ Route::get('/fresh', [Post::class, 'index'])->name('fresh')->middleware('auth');
 Route::get('/trending', [Trending::class, 'index'])->name('trending')->middleware('auth');
 // Route::get('/profile/{user}', [Profile::class, 'index'])->name('profile');
 
-
-
 // profile
 Route::get('/profile', [Profile::class, 'index'])->name('profile')->middleware('auth');
 Route::delete('/profile/{post}', [Profile::class, 'destroy'])->name('profile.destroy');
 Route::get('/profile/{post}/edit', [Profile::class, 'edit'])->name('profile.edit');
 Route::put('/profile/{post}', [Profile::class, 'update'])->name('profile.update');
-
-
-
 
 // category
 Route::get('/gaming', [Category::class, 'gaming'])->name('gaming')->middleware('auth');

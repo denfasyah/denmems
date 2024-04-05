@@ -20,6 +20,7 @@ export default {
         Dark : "#051139",
         Aqua: "#24ebf5",
         Background: "#EBEBEB",
+        Bgg:"#eceff4"
       },
     },
   },

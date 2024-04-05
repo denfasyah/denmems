@@ -46,29 +46,35 @@ class FreshController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'caption' => 'required|max:255',
-            'category_id' => 'required|integer',
-        ]);
+{
+    $validatedData = $request->validate([
+        'caption' => 'required|max:255',
+        'category_id' => 'required|integer',
+        'image' => 'image|file',
+    ]);
 
     // Pastikan kategori dengan ID yang diberikan ada dalam database
-        $category = Category::find($request->input('category_id'));
+    $category = Category::find($request->input('category_id'));
 
-        if ($category) {
-        // Jika kategori ditemukan, simpan postingan
-            $validatedData['category_id'] = $category->id;
-            $validatedData['user_id'] = auth()->user()->id;
-            Post::create($validatedData);
-
-        // Redirect atau lakukan operasi lain sesuai kebutuhan
-            return redirect()->route('fresh.index')->with('success', 'Post berhasil dibuat.');
-        } else {
-        // Handle jika kategori tidak ditemukan
-            return redirect()->back()->withInput()->with('error', 'Kategori tidak valid.');
+    if ($category) {
+        // Simpan gambar ke penyimpanan jika ada
+        if ($request->file('image')) {
+            $imagePath = $request->file('image')->store('post-images');
+            $validatedData['image'] = $imagePath;
         }
 
+        // Jika kategori ditemukan, simpan postingan
+        $validatedData['category_id'] = $category->id;
+        $validatedData['user_id'] = auth()->user()->id;
+        Post::create($validatedData);
+
+        // Redirect atau lakukan operasi lain sesuai kebutuhan
+        return redirect()->route('fresh.index')->with('success', 'Postingan berhasil dibuat.');
+    } else {
+        // Handle jika kategori tidak ditemukan
+        return redirect()->back()->withInput()->with('error', 'Kategori tidak valid.');
     }
+}
 
 
 
