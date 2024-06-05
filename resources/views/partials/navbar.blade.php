@@ -128,7 +128,7 @@
             href="javascript:;"
             class="p-0 text-sm text-white transition-all ease-nav-brand"
           >
-            <img src="{{ asset('icons/bookmarknav.svg') }}" alt="" />
+            <!-- <img src="{{ asset('icons/bookmarknav.svg') }}" alt="" /> -->
             <!-- fixed-plugin-button-nav  -->
           </a>
         </li>
@@ -143,7 +143,7 @@
             dropdown-trigger
             aria-expanded="false"
           >
-            <i class="cursor-pointer fa fa-bell" style="color: #004aad"></i>
+            <!-- <i class="cursor-pointer fa fa-bell" style="color: #004aad"></i> -->
           </a>
 
           <ul

@@ -29,16 +29,92 @@ class CategoryController extends Controller
             "posts" => $posts
         ]);
     }
-    public function anime(){
-        return view('category.anime');
+    public function anime(Request $request)
+    {
+        $animeCategory = Category::findOrFail(2);
+
+        $posts = $animeCategory->posts()->with('category', 'user');
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        $posts = $posts->get();
+
+        return view('category.anime', [
+            "posts" => $posts
+        ]);
     }
-    public function technology(){
-        return view('category.technology');
+    public function technology(Request $request)
+    {
+        $technologyCategory = Category::findOrFail(3);
+
+        $posts = $technologyCategory->posts()->with('category', 'user');
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        $posts = $posts->get();
+
+        return view('category.technology', [
+            "posts" => $posts
+        ]);
     }
-    public function dark(){
-        return view('category.dark');
+    public function dark(Request $request)
+    {
+        $darkCategory = Category::findOrFail(4);
+
+        $posts = $darkCategory->posts()->with('category', 'user');
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        $posts = $posts->get();
+
+        return view('category.dark', [
+            "posts" => $posts
+        ]);
     }
-    public function random(){
-        return view('category.random');
+    public function random(Request $request)
+    {
+        $randomCategory = Category::findOrFail(5);
+
+        $posts = $randomCategory->posts()->with('category', 'user');
+
+        if ($request->has('search')) {
+            $searchTerm = $request->input('search');
+            $posts->where(function ($query) use ($searchTerm) {
+                $query->where('caption', 'like', '%' . $searchTerm . '%')
+                      ->orWhereHas('user', function ($query) use ($searchTerm) {
+                          $query->where('name', 'like', '%' . $searchTerm . '%');
+                      });
+            });
+        }
+
+        $posts = $posts->get();
+
+        return view('category.random', [
+            "posts" => $posts
+        ]);
     }
 }

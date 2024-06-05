@@ -114,11 +114,11 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
         </dialog>
       </div>
 
-      <label class="swap">
-        <!-- this hidden checkbox controls the state -->
+      <!-- <label class="swap">
+        
         <input type="checkbox" />
 
-        <!-- asscending on icon -->
+        
         <span class="bg-Blue rounded swap-on">
           <img
             src="{{ asset('icons/ascending.png') }}"
@@ -127,15 +127,15 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
           />
         </span>
         
-        <!-- descending off icon -->
+        
         <span class="bg-Blue rounded swap-off">
         <img
         src="{{ asset('icons/descending.png') }}"
         alt="iconterlama"
         class=" fill-Blue"
         />
-      </label>
-    </span>
+      </span>
+    </label> -->
     </div>
 
 
@@ -157,7 +157,7 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                   <div class="flex flex-col gap-2">
 
                     <div class="absolute right-0 mt-5">
-                      <img src="{{ asset('icons/bookmarkicon.svg') }}" alt="">
+                      <!-- <img src="{{ asset('icons/bookmarkicon.svg') }}" alt=""> -->
                     </div>
 
                     <h5
@@ -183,20 +183,20 @@ class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ea
                 <div class="flex w-full gap-3 mt-5">
                   <!-- icon like -->
                   <div class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl">
-                  <img src="{{ asset('icons/likeicon.svg') }}" alt="">
-                  <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white">1M </p>
+                  <!-- <img src="{{ asset('icons/likeicon.svg') }}" alt=""> -->
+                  <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"></p>
                   </div>
 
                   <!-- icon comment -->
                   <div class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl">
-                    <img src="{{ asset('icons/commenticon.svg') }}" alt="">
-                    <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white">12 </p>
+                    <!-- <img src="{{ asset('icons/commenticon.svg') }}" alt=""> -->
+                    <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"></p>
                   </div>
 
                   <!-- icon share -->
                   <div class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl">
-                    <img src="{{ asset('icons/shareicon.svg') }}" alt="">
-                    <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white">12 </p>
+                    <!-- <img src="{{ asset('icons/shareicon.svg') }}" alt=""> -->
+                    <p class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"></p>
                   </div>
 
                   <div class="bg-Blue text-white text-xs px-2 mt-2.5 h-5 rounded-xl absolute right-10">

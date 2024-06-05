@@ -48,7 +48,7 @@
         </a>
       </li>
 
-      <li class="mt-0.5 w-full">
+      <!-- <li class="mt-0.5 w-full">
         <a
           class="@if (request()->is('trending'))py-2.7 bg-blue-500/13 font-semibold @endif text-black dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
           href="{{ route('trending') }}"
@@ -66,7 +66,7 @@
             >Trending</span
           >
         </a>
-      </li>
+      </li> -->
 
       <li class="w-full mt-4">
         <h6

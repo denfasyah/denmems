@@ -54,9 +54,9 @@
         </div>
 
         <div class="absolute right-5 top-10">
-          <button class="bg-Blue p-2 text-white rounded-b-xl rounded-tr-xl">
+          <!-- <button class="bg-Blue p-2 text-white rounded-b-xl rounded-tr-xl">
             Edit
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
@@ -233,11 +233,11 @@
                   <div
                     class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl"
                   >
-                    <img src="{{ asset('icons/likeicon.svg') }}" alt="" />
+                    <!-- <img src="{{ asset('icons/likeicon.svg') }}" alt="" /> -->
                     <p
                       class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"
                     >
-                      1M
+                     
                     </p>
                   </div>
 
@@ -245,11 +245,11 @@
                   <div
                     class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl"
                   >
-                    <img src="{{ asset('icons/commenticon.svg') }}" alt="" />
+                    <!-- <img src="{{ asset('icons/commenticon.svg') }}" alt="" /> -->
                     <p
                       class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"
                     >
-                      12
+                      
                     </p>
                   </div>
 
@@ -257,11 +257,11 @@
                   <div
                     class="flex items-center gap-1 h-10 bg-white dark:bg-slate-850 rounded-2xl"
                   >
-                    <img src="{{ asset('icons/shareicon.svg') }}" alt="" />
+                    <!-- <img src="{{ asset('icons/shareicon.svg') }}" alt="" /> -->
                     <p
                       class="mt-4 mr-2 text-xs font-bold font-inter text-slate-500 dark:text-white"
                     >
-                      12
+                      
                     </p>
                   </div>
 
